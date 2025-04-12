@@ -1,0 +1,19 @@
+services:
+  - type: cron
+    name: dps-agent-checker
+    runtime: python
+    repo: https://github.com/GRAHH142010/dps-activity-agent
+    plan: free
+    schedule: "*/30 * * * *"
+    startCommand: "python main.py"
+    envVars:
+      - key: EMAIL_SENDER
+        sync: false
+      - key: EMAIL_PASSWORD
+        sync: false
+      - key: EMAIL_RECEIVER
+        sync: false
+      - key: DPS_USERNAME
+        sync: false
+      - key: DPS_PASSWORD
+        sync: false
